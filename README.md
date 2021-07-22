@@ -103,6 +103,8 @@ src
 | FE Routes & Links                    |    H     |     3 hrs      |      TBD      |     TBD     |
 | FE CRUD operations                   |    H     |     3 hrs      |      TBD      |     TBD     |
 | FE User Auth                         |    H     |     1 hrs      |      TBD      |     TBD     |
+| FE Create Question Form              |    H     |     2 hrs      |      TBD      |     TBD     |
+| FE Edit Question Form                |    H     |     2 hrs      |      TBD      |     TBD     |
 | CSS Styling - Home Screen            |    H     |     3 hrs      |      TBD      |     TBD     |
 | CSS Styling - Main Quiz Screen       |    H     |     3 hrs      |      TBD      |     TBD     |
 | CSS Styling - Game / Question Screen |    H     |     3 hrs      |      TBD      |     TBD     |
@@ -110,7 +112,7 @@ src
 | CSS Styling - Leaderboard Screen     |    H     |     3 hrs      |      TBD      |     TBD     |
 | CSS Styling - Question CUD Screen    |    H     |     3 hrs      |      TBD      |     TBD     |
 | CSS polished styling                 |    H     |     3 hrs      |      TBD      |     TBD     |
-| Total                                |          |     46 hrs     |      TBD      |     TBD     |
+| Total                                |          |    50 hrs      |      TBD      |     TBD     |
 
 <br>
 
@@ -118,7 +120,7 @@ src
 
 #### ERD Model
 
-- [Link to Draw.io](https://i.imgur.com/IcPkx1S.jpeg)
+- [Link to Draw.io](https://i.imgur.com/iDJH2Ww.jpeg)
 <br>
 
 ***
