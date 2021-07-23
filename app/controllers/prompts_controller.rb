@@ -10,12 +10,13 @@ class PromptsController < ApplicationController
 
   # GET /prompts/1
   def show
-    render json: @prompt
+    render json: @prompt, include: :categories
   end
 
   # POST /prompts
   def create
     @prompt = Prompt.new(prompt_params)
+    @prompt.user = @current_user
 
     if @prompt.save
       render json: @prompt, status: :created
@@ -46,6 +47,15 @@ class PromptsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def prompt_params
-      params.require(:prompt).permit(:question, :choice1, :choice2, :choice3, :choice4, :answer, :score_id)
+      params.require(:prompt).permit(:question, :answer, :choice1, :choice2, :choice3)
     end
 end
+
+=begin
+
+If a quiz is 10 questions, 3 ideas for setting up the prompts:
+1. make 1 axios request, pull 10 questions to FE, randomize/sample from there
+2. make 1 request, pull 10 questions on BE, randomize/sample then send to FE
+3. pull 1 question at a time, (i think this is how david suggested to run the project)
+
+=end

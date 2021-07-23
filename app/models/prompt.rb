@@ -1,3 +1,4 @@
 class Prompt < ApplicationRecord
-  has_many :scores
+  belongs_to :user
+  belongs_to :category
 end

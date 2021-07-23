@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :prompts
+  has_many :prompts, dependent: :destroy
 end
