@@ -18,24 +18,10 @@ class ScoresController < ApplicationController
     @score = Score.new(score_params)
 
     if @score.save
-      render json: @score, status: :created, location: @score
+      render json: @score, status: :created
     else
       render json: @score.errors, status: :unprocessable_entity
     end
-  end
-
-  # PATCH/PUT /scores/1
-  def update
-    if @score.update(score_params)
-      render json: @score
-    else
-      render json: @score.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /scores/1
-  def destroy
-    @score.destroy
   end
 
   private

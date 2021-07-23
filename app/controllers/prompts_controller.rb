@@ -18,7 +18,7 @@ class PromptsController < ApplicationController
     @prompt = Prompt.new(prompt_params)
 
     if @prompt.save
-      render json: @prompt, status: :created, location: @prompt
+      render json: @prompt, status: :created
     else
       render json: @prompt.errors, status: :unprocessable_entity
     end
