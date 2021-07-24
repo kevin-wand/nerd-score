@@ -15,14 +15,21 @@ User.destroy_all
 puts "#{User.count} user(s) created"
 
 @hp = Category.create(name: 'Harry Potter')
-# @marvel = Category.create(name: 'Marvel Universe')
+@marvel = Category.create(name: 'Marvel Universe')
 # @dc = Category.create(name: 'DC Universe')
 # @video = Category.create(name: 'Video Games')
 # @got = Category.create(name: 'Game of Thrones')
 
 puts "#{Category.count} category(ies) created"
 
-@hp1 = Prompt.create!(question: "What is Dumbledore's first name?", answer: "Albus", choice1: "Albert", choice2: "Aldous", choice3: "Alldux", user: @admin, category: @hp)
+@hp1 = Prompt.create!(
+  question: "What is Dumbledore's first name?", 
+  answer: "Albus", 
+  choice1: "Albert", 
+  choice2: "Aldous", 
+  choice3: "Alldux", 
+  user: @admin, 
+  category: @hp)
 @hp2 = Prompt.create!(
   question: "What is the Voldemort's original name? (first name)", 
   answer: "Tom", 
@@ -39,25 +46,31 @@ puts "#{Category.count} category(ies) created"
   choice3: "Cricket",
   user: @admin,
   category: @hp)
-=begin
 @marvel1 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "Whos is the god of Mischief?",
+  answer: "Loki",
+  choice1: "Thor", 
+  choice2: "Asmodan", 
+  choice3: "Odin",
+  user: @admin,
+  category: @marvel)
 @marvel2 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "Where did Spider-Man grow up?",
+  answer: "Queens",
+  choice1: "Brooklyn", 
+  choice2: "Bronx", 
+  choice3: "Manhattan",
+  user: @admin,
+  category: @marvel)
 @marvel3 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "What year was Captain America born?",
+  answer: "1918",
+  choice1: "1938", 
+  choice2: "1988", 
+  choice3: "1898",
+  user: @admin,
+  category: @marvel)
+=begin
 @dc1 = Prompt.create!(
   question: ,
   answer: ,
