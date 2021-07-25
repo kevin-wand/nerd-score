@@ -16,9 +16,9 @@ puts "#{User.count} user(s) created"
 
 @hp = Category.create(name: 'Harry Potter')
 @marvel = Category.create(name: 'Marvel Universe')
-# @dc = Category.create(name: 'DC Universe')
-# @video = Category.create(name: 'Video Games')
-# @got = Category.create(name: 'Game of Thrones')
+@dc = Category.create(name: 'DC Universe')
+@video = Category.create(name: 'Video Games')
+@got = Category.create(name: 'Game of Thrones')
 
 puts "#{Category.count} category(ies) created"
 

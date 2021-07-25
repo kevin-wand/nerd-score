@@ -10,7 +10,7 @@ class PromptsController < ApplicationController
 
   # GET /prompts/1
   def show
-    render json: @prompt, include: :categories
+    render json: @prompt, include: :category, status: :ok
   end
 
   # POST /prompts
