@@ -9,7 +9,7 @@ export default function Layout(props) {
     <div>
       <header>
         <div className='logo-container'>
-          <img className="nerd-logo" src='https://i.imgur.com/6hapoRY.jpeg' />
+          <img className="nerd-logo" src='https://i.imgur.com/6hapoRY.jpeg' alt='Nerd Score' />
         </div>
         <div className='login-container'>
           <div className='user-welcome-container'>
@@ -25,12 +25,12 @@ export default function Layout(props) {
           <div className='hamburger'>
             <i className='fas fa-bars fa-2x'></i>
             <ul>
-              <li><Link to='./'>Home Page</Link></li>
-              <li><Link to='./'>Pick a Quiz</Link></li>
-              <li><Link to='./'>Leaderboard</Link></li>
-              <li><Link to='./'>Quiz Edit</Link></li>
-              <li><Link to='./login'>Login</Link></li>
-              <li><Link to='./register'>Register</Link></li>
+              <li><Link to='/'>Home Page</Link></li>
+              <li><Link to='/categories'>Pick a Quiz</Link></li>
+              <li><Link to='/'>Leaderboard</Link></li>
+              <li><Link to='/questions'>Quiz Pool</Link></li>
+              <li><Link to='/login'>Login</Link></li>
+              <li><Link to='/register'>Register</Link></li>
             </ul>
           </div>
         </div>

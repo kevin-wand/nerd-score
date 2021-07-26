@@ -22,12 +22,12 @@ header {
 }
 
 .user-welcome-container {
-  /* display: none; */
+  display: none;
   margin-right: 2rem;
 }
 
 .hamburger {
-  display: none;
+  /* display: none; */
   position: absolute;
   right: 1rem;
   z-index: 10;

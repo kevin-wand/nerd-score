@@ -1,26 +1,26 @@
 import api from './api-config'
 
-export const getAllPrompts = async () => {
-  const resp = await api.get('/categories')
+export const getAllPrompts = async (categoryId) => {
+  const resp = await api.get(`/categories/${categoryId}/prompts`)
   return resp.data
 }
 
-export const getOnePrompt = async (id) => {
-  const resp = await api.get(`/categories/${id}`)
+export const getOnePrompt = async (categoryId, promptId) => {
+  const resp = await api.get(`/categories/${categoryId}/prompts/${promptId}`)
   return resp.data
 }
 
-export const createPrompt = async (promptData) => {
-  const resp = await api.post('/categories', { prompt: promptData })
+export const createPrompt = async (categoryId, promptData) => {
+  const resp = await api.post(`/categories/${categoryId}/prompts`, { prompt: promptData })
   return resp.data
 }
 
-export const updatePrompt = async (id, promptData) => {
-  const resp = await api.put(`/categories/${id}`, id, { prompt: promptData })
+export const updatePrompt = async (categoryId, promptId, promptData) => {
+  const resp = await api.put(`/categories/${categoryId}/prompts/${promptId}`, { prompt: promptData })
   return resp.data
 }
 
-export const deletePrompt = async (id) => {
-  const resp = await api.delete(`/categories/${id}`)
+export const deletePrompt = async (categoryId, promptId) => {
+  const resp = await api.delete(`/categories/${categoryId}/prompts/${promptId}`)
   return resp
 }
