@@ -10,6 +10,7 @@ import Categories from '../screens/Categories'
 import QuestionCreate from '../screens/QuestionCreate'
 import QuestionEdit from '../screens/QuestionEdit'
 import QuestionPool from '../screens/QuestionPool'
+import Quiz from '../screens/Quiz'
 import Home from '../screens/Home'
 
 export default function MainContainer(props) {
@@ -76,12 +77,18 @@ export default function MainContainer(props) {
             handleCreate={handleCreate}
           />
         </Route>
-        <Route path='/questions'>
-          <QuestionPool
+        <Route path='/categories/:quizId'>
+          <Quiz
             categoryList={categoryList}
             promptList={promptList}
-            handleDelete={handleDelete}
           />
+          <Route path='/questions'>
+            <QuestionPool
+              categoryList={categoryList}
+              promptList={promptList}
+              handleDelete={handleDelete}
+            />
+          </Route>
         </Route>
         <Route path='/categories'>
           <Categories categoryList={categoryList} />

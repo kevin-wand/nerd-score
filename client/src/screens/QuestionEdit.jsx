@@ -12,7 +12,7 @@ export default function QuestionEdit(props) {
     category_id: '',
   });
   const { question, answer, choice1, choice2, choice3, category_id } = formData;
-  const { currentUser, promptList, handleUpdate } = props;
+  const { promptList, handleUpdate } = props;
   const { quizId, promptId } = useParams();
 
   useEffect(() => {

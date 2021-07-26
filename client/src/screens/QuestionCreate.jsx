@@ -11,7 +11,7 @@ export default function QuestionCreate(props) {
     category_id: '',
   });
   const { question, answer, choice1, choice2, choice3, category_id } = formData;
-  const { categoryList, currentUser, handleCreate } = props;
+  const { categoryList, handleCreate } = props;
   const { quizId } = useParams()
 
   // const nameOfcategory = categoryList.filter((category) => category.id === Number(quizId))
