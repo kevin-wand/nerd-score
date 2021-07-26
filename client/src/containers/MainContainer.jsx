@@ -12,10 +12,11 @@ import QuestionEdit from '../screens/QuestionEdit'
 import QuestionPool from '../screens/QuestionPool'
 import Home from '../screens/Home'
 
-export default function MainContainer() {
+export default function MainContainer(props) {
   const [categoryList, setCategoryList] = useState([])
   const [promptList, setPromptList] = useState([])
   const history = useHistory()
+  const { currentUser } = props
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -33,20 +34,22 @@ export default function MainContainer() {
   // console.log(categoryList)
   // console.log(promptList)
 
-  const handleCreate = async (formData) => {
-    const promptData = await createPrompt(formData);
-    setPromptList((prevState) => [...prevState, promptData]);
-    history.push('/categories');
+  const handleCreate = async (categoryId, promptData) => {
+    console.log(promptData)
+    const newData = await createPrompt(categoryId, promptData);
+    setPromptList((prevState) => [...prevState, newData]);
+    history.push('/question');
   };
 
-  const handleUpdate = async (id, formData) => {
-    const promptData = await updatePrompt(id, formData);
+  const handleUpdate = async (categoryId, promptId, promptData) => {
+    console.log(promptData)
+    const newData = await updatePrompt(categoryId, promptId, promptData);
     setPromptList((prevState) =>
       prevState.map((prompt) => {
-        return prompt.id === Number(id) ? promptData : prompt;
+        return prompt.id === Number(promptId) ? newData : prompt;
       })
     );
-    history.push('/categories');
+    history.push('/questions');
   };
 
   const handleDelete = async (categoryId, promptId) => {
@@ -62,13 +65,14 @@ export default function MainContainer() {
           <QuestionEdit
             categoryList={categoryList}
             promptList={promptList}
+            currentUser={currentUser}
             handleUpdate={handleUpdate}
           />
         </Route>
         <Route path='/categories/:quizId/prompts/'>
           <QuestionCreate
             categoryList={categoryList}
-            promptList={promptList}
+            currentUser={currentUser}
             handleCreate={handleCreate}
           />
         </Route>

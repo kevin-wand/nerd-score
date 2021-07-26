@@ -22,8 +22,8 @@ header {
 }
 
 .user-welcome-container {
-  display: none;
-  margin-right: 2rem;
+  /* display: none; */
+  margin-right: 20rem;
 }
 
 .hamburger {
