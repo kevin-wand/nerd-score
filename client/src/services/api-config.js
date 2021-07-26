@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = process.env.NODE_ENV === 'production' ? 'deployment link here' :'http://localhost:3000/'
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://nerdscore-api.herokuapp.com/' :'http://localhost:3000/'
 
 const api = axios.create({
   baseURL: baseUrl

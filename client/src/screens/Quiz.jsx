@@ -18,6 +18,7 @@ export default function Quiz(props) {
   return (
     <div>
       <div>Welcome to the {currentGame.name} quiz</div>
+
     </div>
   )
 }
