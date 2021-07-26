@@ -1,4 +1,5 @@
 class PromptsController < ApplicationController
+  before_action :authorize_request, only: [:create, :update,:destroy]
   before_action :set_prompt, only: [:show, :update, :destroy]
 
   # GET /prompts

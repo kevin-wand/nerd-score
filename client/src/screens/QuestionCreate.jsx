@@ -9,9 +9,8 @@ export default function QuestionCreate(props) {
     choice2: '',
     choice3: '',
     category_id: '',
-    user: ''
   });
-  const { question, answer, choice1, choice2, choice3, category_id, user } = formData;
+  const { question, answer, choice1, choice2, choice3, category_id } = formData;
   const { categoryList, currentUser, handleCreate } = props;
   const { quizId } = useParams()
 
@@ -24,7 +23,6 @@ export default function QuestionCreate(props) {
       [name]: value,
       category_id: Number(quizId),
       // category_id: nameOfcategory[0].name,
-      user: currentUser
     }));
 
   };

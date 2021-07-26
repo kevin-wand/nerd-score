@@ -10,9 +10,8 @@ export default function QuestionEdit(props) {
     choice2: '',
     choice3: '',
     category_id: '',
-    user: ''
   });
-  const { question, answer, choice1, choice2, choice3, category_id, user } = formData;
+  const { question, answer, choice1, choice2, choice3, category_id } = formData;
   const { currentUser, promptList, handleUpdate } = props;
   const { quizId, promptId } = useParams();
 
@@ -26,7 +25,6 @@ export default function QuestionEdit(props) {
         choice2: singlePrompt.choice2,
         choice3: singlePrompt.choice3,
         category_id: singlePrompt.category_id,
-        user: singlePrompt.user
       });
     };
     if (promptList.length) {
@@ -40,7 +38,6 @@ export default function QuestionEdit(props) {
       ...prevState,
       [name]: value,
       category_id: Number(quizId),
-      user: currentUser
     }));
   };
 
