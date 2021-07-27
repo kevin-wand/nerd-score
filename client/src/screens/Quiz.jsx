@@ -46,7 +46,7 @@ export default function Quiz() {
   const guess = (e) => {
     correctAnswer = quiz[0]?.answer
     // console.log(correctAnswer)
-    console.log(e)
+    console.log(e.target)
     setUserAnswer(e.target)
     // console.log(userAnswer)
     if (userAnswer === correctAnswer) {
