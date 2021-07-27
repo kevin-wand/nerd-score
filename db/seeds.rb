@@ -70,25 +70,88 @@ puts "#{Category.count} category(ies) created"
   choice3: "1898",
   user: @admin,
   category: @marvel)
-=begin
+
 @dc1 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "What is Batman's real name?",
+  answer: "Bruce",
+  choice1: "Wayne", 
+  choice2: "Donald", 
+  choice3: "Bruno",
+  user: @admin,
+  category: @dc)
 @dc2 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "What is the name of Batman's butler",
+  answer: "Alfred",
+  choice1: "Alvin", 
+  choice2: "Robin", 
+  choice3: "Arya",
+  user: @admin,
+  category: @dc)
 @dc3 = Prompt.create!(
-  question: ,
-  answer: ,
-  choice1:, 
-  choice2:, 
-  choice3:)
+  question: "Who was the first to star as Batman in a live action film?",
+  answer: "Adam West",
+  choice1: "Michael Keaton", 
+  choice2: "Val Kilmer", 
+  choice3: "Michael Adam",
+  user: @admin,
+  category: @dc)
+@dc4 = Prompt.create!(
+  question: "Who was Superman's first love?",
+  answer: "Lana Lang",
+  choice1: "Lois Lane", 
+  choice2: "Lana Lane", 
+  choice3: "Lois Lang",
+  user: @admin,
+  category: @dc)
+@dc5 = Prompt.create!(
+  question: "What is the name of Superman's human mom?",
+  answer: "Martha",
+  choice1: "Lois", 
+  choice2: "Lara", 
+  choice3: "Jor-El",
+  user: @admin,
+  category: @dc)
+@dc6 = Prompt.create!(
+  question: "What is Aquaman's real name?",
+  answer: "Arthur",
+  choice1: "Jason", 
+  choice2: "Aquaman", 
+  choice3: "Otis",
+  user: @admin,
+  category: @dc)
+@dc7 = Prompt.create!(
+  question: "Where is Wonder Woman from?",
+  answer: "Paradise Island",
+  choice1: "Amazonia", 
+  choice2: "Mount Olympus", 
+  choice3: "Hippolyta",
+  user: @admin,
+  category: @dc)
+@dc8 = Prompt.create!(
+  question: "What does DC stand for?",
+  answer: "Detective Comics",
+  choice1: "Daily Comics", 
+  choice2: "Daily Crime", 
+  choice3: "District of Columbia",
+  user: @admin,
+  category: @dc)
+@dc9 = Prompt.create!(
+  question: "What is Carter Hall's secret identity?",
+  answer: "Hawkman",
+  choice1: "Cyborg", 
+  choice2: "Flash", 
+  choice3: "Green Arrow",
+  user: @admin,
+  category: @dc)
+@dc10 = Prompt.create!(
+  question: "What superhero team is Robin on?",
+  answer: "Teen Titans",
+  choice1: "Justice League", 
+  choice2: "Suicide Squad", 
+  choice3: "The X-Men",
+  user: @admin,
+  category: @dc)
+=begin
 @video1 = Prompt.create!(
   question: ,
   answer: ,

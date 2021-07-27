@@ -78,17 +78,14 @@ export default function MainContainer(props) {
           />
         </Route>
         <Route path='/categories/:quizId'>
-          <Quiz
+          <Quiz />
+        </Route>
+        <Route path='/questions'>
+          <QuestionPool
             categoryList={categoryList}
             promptList={promptList}
+            handleDelete={handleDelete}
           />
-          <Route path='/questions'>
-            <QuestionPool
-              categoryList={categoryList}
-              promptList={promptList}
-              handleDelete={handleDelete}
-            />
-          </Route>
         </Route>
         <Route path='/categories'>
           <Categories categoryList={categoryList} />
