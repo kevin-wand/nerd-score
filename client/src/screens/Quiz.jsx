@@ -7,13 +7,16 @@ import { shuffle } from "../services/game";
 export default function Quiz() {
   const [currentGame, setCurrentGame] = useState([0])
   const [quiz, setQuiz] = useState([])
-  const [multiChoice, setMultiChoice] = useState([])
+  const [multipleChoice, setMultipleChoice] = useState([])
+  const [userAnswer, setUserAnswer] = useState("")
+  // const [message, setMessage] = useState("")
+  // const [score, setScore] = useState(0)
   const { quizId } = useParams()
 
-  let quizArray = []
+  let gameTime = []
   let questionArray = []
   let gameLength = 5
-  let correct = ""
+  let correctAnswer = ""
 
   useEffect(() => {
     const fetchOneCategory = async () => {
@@ -21,38 +24,64 @@ export default function Quiz() {
       setCurrentGame(categoryData);
     };
     fetchOneCategory();
+    console.log(currentGame)
   }, [])
 
-  const displayQuestions = () => {
+  const gameStart = () => {
+    console.log(currentGame)
+    for (let j = 0; j < gameLength; j++) {
+      gameTime.push(currentGame.prompts[j])
+    }
+    shuffle(gameTime)
+    setQuiz(gameTime)
     questionArray.push(quiz[0]?.answer)
     questionArray.push(quiz[0]?.choice1)
     questionArray.push(quiz[0]?.choice2)
     questionArray.push(quiz[0]?.choice3)
-    correct = quiz[0]?.answer
     shuffle(questionArray)
-    setMultiChoice(questionArray)
-  }
-
-  const gameStart = () => {
-    for (let j = 0; j < gameLength; j++) {
-      quizArray.push(currentGame.prompts[j])
-    }
-    shuffle(quizArray)
-    setQuiz(quizArray)
-    displayQuestions()
+    setMultipleChoice(questionArray)
     // toggle button style display hidden
   }
 
-
   const guess = (e) => {
-    if (e.target.value === correct) {
-      console.log("correct")
+    correctAnswer = quiz[0]?.answer
+    // console.log(correctAnswer)
+    console.log(e)
+    setUserAnswer(e.target)
+    // console.log(userAnswer)
+    if (userAnswer === correctAnswer) {
+      console.log("you guessed correct")
     } else {
-      console.log("wrong")
+      console.log("wrong answer")
     }
-    quiz.splice(0, 1)
-    setQuiz((prevState) => [...prevState, quiz])
+    quiz.shift()
+    setQuiz((prevState) => [...prevState])
+    questionArray.push(quiz[0]?.answer)
+    questionArray.push(quiz[0]?.choice1)
+    questionArray.push(quiz[0]?.choice2)
+    questionArray.push(quiz[0]?.choice3)
+    correctAnswer = quiz[0]?.answer
+    shuffle(questionArray)
+    setMultipleChoice(questionArray)
   }
+
+  return (
+    <div>
+      {currentGame && <div>Welcome to the {currentGame?.name} quiz</div>}
+      <button onClick={() => gameStart()}>Start Quiz</button>
+      {quiz &&
+        <div>
+          <div>{quiz[0]?.question}</div>
+          <button onClick={(e) => guess(e)}>{multipleChoice[0]}</button>
+          <button onClick={(e) => guess(e)}>{multipleChoice[1]}</button>
+          <button onClick={(e) => guess(e)}>{multipleChoice[2]}</button>
+          <button onClick={(e) => guess(e)}>{multipleChoice[3]}</button>
+        </div>
+      }
+    </div>
+  )
+}
+
 
   // 3. put them into a new array with a randomized order (push)
   // 4. remove from the original array list so they dont show up again (splice)
@@ -66,28 +95,3 @@ export default function Quiz() {
   // display next button to move to next item in the new array and do all over
   // 9. later add a score, connect score to user
 
-  return (
-    <div>
-      <div>Welcome to the {currentGame.name} quiz</div>
-      <button onClick={() => gameStart()}>Start Quiz</button>
-      {quiz &&
-        <div>
-          <div>{quiz[0]?.question}</div>
-          {/* <div>{multiChoice[0]}</div>
-          <div>{multiChoice[1]}</div>
-          <div>{multiChoice[2]}</div>
-          <div>{multiChoice[3]}</div> */}
-        </div>
-      }
-      <br />
-      {multiChoice &&
-        <div>
-          <button onClick={() => guess()}><div>{multiChoice[0]}</div></button>
-          <button onClick={() => guess()}><div>{multiChoice[1]}</div></button>
-          <button onClick={() => guess()}><div>{multiChoice[2]}</div></button>
-          <button onClick={() => guess()}><div>{multiChoice[3]}</div></button>
-        </div>
-      }
-    </div>
-  )
-}
