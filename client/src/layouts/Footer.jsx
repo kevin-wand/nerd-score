@@ -1,5 +1,5 @@
 import React from 'react'
-import '../assets/Footer.css'
+import '../assets/OnePage.css'
 
 export default function Footer() {
   return (

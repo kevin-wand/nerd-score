@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/Layout.css'
+import '../assets/OnePage.css'
 
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Switch, Route, useHistory } from 'react-router-dom'
 import React from 'react'
-import '../assets/MainContainer.css'
 
 import { getAllCategories } from '../services/categories'
 import { getAllPrompts, createPrompt, updatePrompt, deletePrompt } from '../services/prompts'

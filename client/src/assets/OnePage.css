@@ -1,0 +1,52 @@
+header {
+  background-color: #4A5CA2; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+ 
+ .logo-container {
+   width: 200px;
+   height: 100px;
+ 
+ }
+ 
+ .nerd-logo {
+   transform: translateY(-50px)
+ }
+ 
+ .login-container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+ }
+ 
+ .user-welcome-container {
+   /* display: none; */
+   margin-right: 20rem;
+ }
+ 
+ .hamburger {
+   /* display: none; */
+   position: absolute;
+   right: 1rem;
+   z-index: 10;
+ }
+
+ .main-option-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.welcome-tag, .main-option {
+  width: 25vw;
+  height: 10vh;
+  background-color: #E3895A
+} 
+
+.footer {
+  display: none;
+  background-color: #4A5CA2;
+  height: 50px
+}

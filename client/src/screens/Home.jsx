@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import '../assets/Home.css'
+import '../assets/OnePage.css'
 
 export default function Home() {
   return (
