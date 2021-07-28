@@ -140,8 +140,87 @@ header {
   }
 
 }
+/* ------------------------------------CATEGORIES------------------------------------- */
 
-/* -------------------------------------LOGIN------------------------------------- */
+.category-wrapper {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+}
+
+.category-header {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+  display: flex;
+  text-align: center;
+  background-color: #9FC7D1;
+  width: 76vw;
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.category-container { 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 80vw;
+  height: 37vh;
+  justify-content: space-evenly;
+  align-content: space-around;
+} 
+
+.category-card { 
+  flex-wrap: wrap;
+  background-color: #E3895A;
+  color: #FFFFFF;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 6px 9px 5px rgba(0,0,0,0);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 24vw;
+  height: 15vh;
+}
+
+.category-link {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  .category-header {
+    width: 80vw;
+  }
+
+  .category-container { 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex:auto;
+    justify-content: flex-start;
+  }
+
+  .category-card { 
+    width: auto;
+    height: 10vh;
+    margin-top: 2%;
+    margin-bottom: 2%
+  }
+}
+
+/* --------------------------------LOGIN / REGISTER---------------------------------- */
 
 .login-wrapper {
   display:flex;
