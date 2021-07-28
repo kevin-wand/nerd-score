@@ -351,6 +351,126 @@ header {
   margin: 0px 10px 10px 10px;
 }
 
+@media (max-width: 500px) {
+  .question-form {
+    height: 50vh;
+  }
+  .question-input, .question-label {
+    font-size: 90%;
+    margin: 5px 0;    
+  }
+}
+
+/* --------------------------------------QUIZ---------------------------------------- */
+
+.quiz-wrapper{
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #c4c4c4;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 58vh;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.quiz-header{
+  background-color: #E3895A;
+  color: #FFFFFF;
+  box-shadow: 0px 10px 13px -7px #000000, 5px 6px 9px 5px rgba(0,0,0,0);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 10px;
+  width: 24vw;
+  height: 10vh;
+  font-weight: bolder;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.quiz-start{
+  background-color: #9FC7D1;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  display: flex;
+}
+
+.quiz-start-button{
+  background-color: #9FC7D1;
+  width: 24vw;
+  height: 10vh;
+}
+
+.quiz-question{
+  display: flex;
+  background-color: #9FC7D1;
+  height: 5vh;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+.quiz-choices {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+}
+
+.quiz-choices:hover {
+  background-color: #9FC7D1
+}
+
+.traffic-lights:hover {
+  background-color: green;
+}
+
+.traffic-lights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #92415D;
+  transform: translate(3vw, 10px);
+  border: 20px
+}
+
+.quiz-responses{
+  display: flex;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px 10px 30px;
+  transform: translateX(4vw);
+}
+
+@media (max-width: 700px) {
+  .quiz-header {
+    font-size: 115%;
+  }
+}
+
+@media (max-width: 600px) {
+  .quiz-response {
+    transform: translateX(0);
+  }
+  .traffic-lights{
+    display: none;
+  }
+  .quiz-question {
+    font-size: 90%;
+  }
+}
 
 
 /* --------------------------------LOGIN / REGISTER---------------------------------- */
@@ -455,7 +575,16 @@ header {
 /* ------------------------------------FOOTER------------------------------------- */
 
 .footer {
-  display: none;
+  /* display: none; */
   background-color: #4A5CA2;
-  height: 50px
+  height: 50px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0
 }

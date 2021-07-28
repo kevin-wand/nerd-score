@@ -4,7 +4,7 @@ import '../assets/OnePage.css'
 export default function Footer() {
   return (
     <div className='footer'>
-      footer
+      Open Source by Kevin Wand
     </div>
   )
 }

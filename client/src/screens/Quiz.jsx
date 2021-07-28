@@ -70,12 +70,17 @@ export default function Quiz() {
   }
 
   return (
-    <div>
-      {currentGame && <div>Welcome to the {currentGame?.name} quiz</div>}
-      {showButton ? <button onClick={() => gameStart()}>Start Quiz</button> : ""}
-      <div>{question}</div>
+    <div className='quiz-wrapper'>
+      {currentGame && <div className='quiz-header'>Welcome to the {currentGame?.name} quiz</div>}
+      <div className='quiz-start'>
+        {showButton ? <button onClick={() => gameStart()} className='quiz-start-button'>Start Quiz</button> : ""}
+      </div>
+      <div className='quiz-question'>{question}</div>
       {multipleChoices && multipleChoices.map((choice, idx) => (
-        <button onClick={guess} value={choice.value} key={idx}>{choice.text}</button>
+        <div className='quiz-choices'>
+          <div className='traffic-lights'> </div>
+          <button onClick={guess} value={choice.value} key={idx} className='quiz-responses'>{choice.text}</button>
+        </div>
       ))}
     </div>
   )
