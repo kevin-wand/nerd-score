@@ -59,7 +59,6 @@ export default function MainContainer(props) {
   };
 
   return (
-    <div>
       <Switch>
         <Route path='/categories/:quizId/prompts/:promptId/edit'>
           <QuestionEdit
@@ -93,6 +92,5 @@ export default function MainContainer(props) {
           <Home />
         </Route>
       </Switch>
-    </div>
   )
 }
