@@ -2,31 +2,6 @@
   background-color: #F1F4FA;
 }
 
-/* .wrapper:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.75);
-  z-index: 400;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s ease-in-out;
-}
-
-.wrapper {
-  background-color: #F1F4FA;
-  position: relative;
-  width: 100%;
-  min-height: 100%;
-  z-index: 2;
-  transition: transform 0.5s ease-in-out;
-} */
-
-
 /* ------------------------------------HEADER------------------------------------- */
 
 header {
@@ -43,12 +18,6 @@ header {
 .nerd-logo {
   transform: translateY(-110px)
 }
-
-/* .dropdown-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-} */
 
 .user-welcome-container {
   display: flex;
@@ -297,6 +266,10 @@ li {
   align-content: center;
   justify-items: center;
   align-items: center;
+}
+
+.category-link:hover{
+  transform: scale(1.1);
 }
 
 @media (max-width: 500px) {
@@ -576,12 +549,8 @@ li {
 .login-wrapper {
   display:flex;
   flex-direction: column;
-  /* background-image: url(); */
   align-items: center;
   height: 100vh;
-  /* background-position-x: 50%; */
-  /* background-size: cover; */
-  /* margin-top: 10vh; */
 }
 
 .login-container {

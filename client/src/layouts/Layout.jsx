@@ -8,7 +8,6 @@ export default function Layout(props) {
 
   function toggleNav() {
     setShowNav(prevState => !prevState);
-    console.log(showNav)
   }
 
   return (
