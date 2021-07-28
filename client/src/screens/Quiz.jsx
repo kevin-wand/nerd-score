@@ -5,93 +5,78 @@ import { shuffle } from "../services/game";
 
 
 export default function Quiz() {
-  const [currentGame, setCurrentGame] = useState([0])
-  const [quiz, setQuiz] = useState([])
-  const [multipleChoice, setMultipleChoice] = useState([])
-  const [userAnswer, setUserAnswer] = useState("")
+  const [currentGame, setCurrentGame] = useState()
+  const [multipleChoices, setMultipleChoices] = useState([])
+  const [question, setQuestion] = useState('')
   // const [message, setMessage] = useState("")
-  // const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0)
+  const [showButton, setShowButton] = useState(true)
   const { quizId } = useParams()
 
-  let gameTime = []
-  let questionArray = []
   let gameLength = 5
-  let correctAnswer = ""
 
   useEffect(() => {
     const fetchOneCategory = async () => {
-      const categoryData = await getOneCategory(quizId);
-      setCurrentGame(categoryData);
+      const data = await getOneCategory(quizId);
+      console.log(data)
+      setCurrentGame({
+        name: data.name,
+        questions: shuffle(data.prompts.slice(-gameLength))
+      });
     };
     fetchOneCategory();
-    console.log(currentGame)
   }, [])
 
   const gameStart = () => {
-    console.log(currentGame)
-    for (let j = 0; j < gameLength; j++) {
-      gameTime.push(currentGame.prompts[j])
-    }
-    shuffle(gameTime)
-    setQuiz(gameTime)
-    questionArray.push(quiz[0]?.answer)
-    questionArray.push(quiz[0]?.choice1)
-    questionArray.push(quiz[0]?.choice2)
-    questionArray.push(quiz[0]?.choice3)
-    shuffle(questionArray)
-    setMultipleChoice(questionArray)
-    // toggle button style display hidden
+    setShowButton(false)
+    setQuestion(currentGame?.questions[0]?.question)
+    const choices = [
+      {
+        value: "right",
+        text: currentGame?.questions[0]?.answer
+      },
+      {
+        value: "wrong",
+        text: currentGame?.questions[0]?.choice1
+      },
+      {
+        value: "wrong",
+        text: currentGame?.questions[0]?.choice2
+      },
+      {
+        value: "wrong",
+        text: currentGame?.questions[0]?.choice3
+      }
+    ]
+    shuffle(choices)
+    setMultipleChoices(choices)
   }
 
   const guess = (e) => {
-    correctAnswer = quiz[0]?.answer
-    // console.log(correctAnswer)
-    console.log(e.target)
-    setUserAnswer(e.target)
-    // console.log(userAnswer)
-    if (userAnswer === correctAnswer) {
+    const { value } = e.target
+    if (value === "right") {
+      setScore(prevScore => prevScore + 1)
       console.log("you guessed correct")
     } else {
       console.log("wrong answer")
     }
-    quiz.shift()
-    setQuiz((prevState) => [...prevState])
-    questionArray.push(quiz[0]?.answer)
-    questionArray.push(quiz[0]?.choice1)
-    questionArray.push(quiz[0]?.choice2)
-    questionArray.push(quiz[0]?.choice3)
-    correctAnswer = quiz[0]?.answer
-    shuffle(questionArray)
-    setMultipleChoice(questionArray)
+    const newQuestions = currentGame.questions.shift()
+    setCurrentGame(prevState => ({ ...prevState, newQuestions }))
+    if (currentGame.questions.length) {
+      gameStart()
+    } else {
+      alert(`Game over, score is ${score}`)
+    }
   }
 
   return (
     <div>
       {currentGame && <div>Welcome to the {currentGame?.name} quiz</div>}
-      <button onClick={() => gameStart()}>Start Quiz</button>
-      {quiz &&
-        <div>
-          <div>{quiz[0]?.question}</div>
-          <button onClick={(e) => guess(e)}>{multipleChoice[0]}</button>
-          <button onClick={(e) => guess(e)}>{multipleChoice[1]}</button>
-          <button onClick={(e) => guess(e)}>{multipleChoice[2]}</button>
-          <button onClick={(e) => guess(e)}>{multipleChoice[3]}</button>
-        </div>
-      }
+      {showButton ? <button onClick={() => gameStart()}>Start Quiz</button> : ""}
+      <div>{question}</div>
+      {multipleChoices && multipleChoices.map((choice, idx) => (
+        <button onClick={guess} value={choice.value} key={idx}>{choice.text}</button>
+      ))}
     </div>
   )
 }
-
-
-  // 3. put them into a new array with a randomized order (push)
-  // 4. remove from the original array list so they dont show up again (splice)
-  // 5. make a new array with just the single question (pop)
-  // 6. take the single array's question, choices, and answer, pull out question then shuffle the order for the choices and answer
-  // tie the order to display with buttons
-  // 7. make a validation query for the game user can only click one and game stops from choosing more
-  // 8. handleClick
-  // e.target on button click
-  // display correct or incorrect (and answer)
-  // display next button to move to next item in the new array and do all over
-  // 9. later add a score, connect score to user
-

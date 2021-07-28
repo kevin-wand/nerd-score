@@ -9,7 +9,7 @@ export default function Layout(props) {
     <div>
       <header>
         <div className='logo-container'>
-          <img className="nerd-logo" src='https://i.imgur.com/6hapoRY.jpeg' alt='Nerd Score' />
+          {/* <img className="nerd-logo" src='https://i.imgur.com/6hapoRY.jpeg' alt='Nerd Score' /> */}
         </div>
         <div className='login-container'>
           <div className='user-welcome-container'>
