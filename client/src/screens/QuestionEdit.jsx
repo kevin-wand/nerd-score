@@ -11,7 +11,7 @@ export default function QuestionEdit(props) {
     choice3: '',
     category_id: '',
   });
-  const { question, answer, choice1, choice2, choice3, category_id } = formData;
+  const { question, answer, choice1, choice2, choice3 } = formData;
   const { promptList, handleUpdate } = props;
   const { quizId, promptId } = useParams();
 
@@ -30,7 +30,7 @@ export default function QuestionEdit(props) {
     if (promptList.length) {
       prefillFormData();
     }
-  }, [promptList]);
+  }, [promptList, promptId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -10,11 +10,9 @@ export default function QuestionCreate(props) {
     choice3: '',
     category_id: '',
   });
-  const { question, answer, choice1, choice2, choice3, category_id } = formData;
-  const { categoryList, handleCreate } = props;
+  const { question, answer, choice1, choice2, choice3 } = formData;
+  const { handleCreate } = props;
   const { quizId } = useParams()
-
-  // const nameOfcategory = categoryList.filter((category) => category.id === Number(quizId))
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,9 +20,7 @@ export default function QuestionCreate(props) {
       ...prevState,
       [name]: value,
       category_id: Number(quizId),
-      // category_id: nameOfcategory[0].name,
     }));
-
   };
 
   return (

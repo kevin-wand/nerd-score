@@ -31,18 +31,13 @@ export default function MainContainer(props) {
     fetchPrompts()
   }, [])
 
-  // console.log(categoryList)
-  // console.log(promptList)
-
   const handleCreate = async (categoryId, promptData) => {
-    console.log(promptData)
     const newData = await createPrompt(categoryId, promptData);
     setPromptList((prevState) => [...prevState, newData]);
-    history.push('/question');
+    history.push('/questions');
   };
 
   const handleUpdate = async (categoryId, promptId, promptData) => {
-    console.log(promptData)
     const newData = await updatePrompt(categoryId, promptId, promptData);
     setPromptList((prevState) =>
       prevState.map((prompt) => {
@@ -59,38 +54,36 @@ export default function MainContainer(props) {
   };
 
   return (
-      <Switch>
-        <Route path='/categories/:quizId/prompts/:promptId/edit'>
-          <QuestionEdit
-            categoryList={categoryList}
-            promptList={promptList}
-            currentUser={currentUser}
-            handleUpdate={handleUpdate}
-          />
-        </Route>
-        <Route path='/categories/:quizId/prompts/'>
-          <QuestionCreate
-            categoryList={categoryList}
-            currentUser={currentUser}
-            handleCreate={handleCreate}
-          />
-        </Route>
-        <Route path='/categories/:quizId'>
-          <Quiz />
-        </Route>
-        <Route path='/questions'>
-          <QuestionPool
-            categoryList={categoryList}
-            promptList={promptList}
-            handleDelete={handleDelete}
-          />
-        </Route>
-        <Route path='/categories'>
-          <Categories categoryList={categoryList} />
-        </Route>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
+    <Switch>
+      <Route path='/categories/:quizId/prompts/:promptId/edit'>
+        <QuestionEdit
+          categoryList={categoryList}
+          promptList={promptList}
+          currentUser={currentUser}
+          handleUpdate={handleUpdate}
+        />
+      </Route>
+      <Route path='/categories/:quizId/prompts/'>
+        <QuestionCreate
+          handleCreate={handleCreate}
+        />
+      </Route>
+      <Route path='/categories/:quizId'>
+        <Quiz />
+      </Route>
+      <Route path='/questions'>
+        <QuestionPool
+          categoryList={categoryList}
+          promptList={promptList}
+          handleDelete={handleDelete}
+        />
+      </Route>
+      <Route path='/categories'>
+        <Categories categoryList={categoryList} />
+      </Route>
+      <Route path='/'>
+        <Home />
+      </Route>
+    </Switch>
   )
 }

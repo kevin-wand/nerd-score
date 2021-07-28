@@ -6,12 +6,12 @@ export default function Layout(props) {
   const { currentUser, handleLogout } = props;
 
   return (
-    <div>
+    <div className='layout-container'>
       <header>
         <div className='logo-container'>
-          {/* <img className="nerd-logo" src='https://i.imgur.com/6hapoRY.jpeg' alt='Nerd Score' /> */}
+          <img className="nerd-logo" src='https://i.imgur.com/hSc7opW.jpg' alt='Nerd Score' />
         </div>
-        <div className='login-container'>
+        <div className='dropdown-container'>
           <div className='user-welcome-container'>
             {currentUser ? (
               <div>

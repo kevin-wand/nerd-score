@@ -1,3 +1,7 @@
+.wrapper {
+  background-color: #F1F4FA;
+}
+
 header {
   background-color: #4A5CA2; 
   display: flex;
@@ -13,10 +17,10 @@ header {
 }
 
 .nerd-logo {
-  transform: translateY(-50px)
+  transform: translateY(-110px)
 }
 
-.login-container {
+.dropdown-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -136,6 +140,101 @@ header {
   }
 
 }
+
+/* -------------------------------------LOGIN------------------------------------- */
+
+.login-wrapper {
+  display:flex;
+  flex-direction: column;
+  /* background-image: url(); */
+  align-items: center;
+  height: 100vh;
+  /* background-position-x: 50%; */
+  /* background-size: cover; */
+  /* margin-top: 10vh; */
+}
+
+.login-container {
+  margin: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E3895A;
+  width: 45vw;
+  height: 35vh;
+  border-radius: 3px;
+  box-shadow: 0px 20px 0px -10px #E3895A, 0px -20px 0px -10px #E3895A, 20px 0px 0px -10px #E3895A, -20px 0px 0px -10px #E3895A, 0px 0px 0px 10px #92415D;
+}
+
+.login-form {
+  background-color: #c4c4c4;
+  box-shadow: inset 10px 10px 10px -10px #92415D, inset -10px -10px 10px -10px #92415D;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 30vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.login-form-header{
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  width: 200px;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.login-password {
+  padding-left: 3px
+}
+
+.login-button-container {
+  flex-direction: row;
+}
+
+.login-button {
+  width: 100px;
+  height: 33px;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  border: none;
+  margin: 0px 10px;
+}
+
+.login-button:active {
+  opacity: 50%;
+  border: 2px solid yellow;
+}
+
+.login-button:hover {
+  color: yellow;
+}
+
+@media (max-width: 800px) {
+  .login-input {
+    width: 20vw;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .login-input {
+    width: 15vw;
+  }
+  .login-button {
+    width: 15vw;
+  
+  }
+}
+
 
 /* ------------------------------------FOOTER------------------------------------- */
 

@@ -25,7 +25,7 @@ export default function Quiz() {
       });
     };
     fetchOneCategory();
-  }, [])
+  }, [gameLength, quizId])
 
   const gameStart = () => {
     setShowButton(false)
