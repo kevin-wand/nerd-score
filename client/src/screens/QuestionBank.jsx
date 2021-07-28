@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom';
 import { getOneCategory } from "../services/categories";
 
-export default function QuestionPool(props) {
+export default function QuestionBank(props) {
   const { categoryList, handleDelete } = props
 
   const [dropdown, setDropdown] = useState(null);
@@ -24,8 +24,8 @@ export default function QuestionPool(props) {
   };
 
   return (
-    <div>
-      <h3>Question Pool</h3>
+    <div className='bank-wrapper'>
+      <h3 className='bank-header'>Question Bank</h3>
       <select onChange={handleChange} defaultValue='default'>
         <option disabled value='default' >
           -- Select a Category --

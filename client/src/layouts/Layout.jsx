@@ -28,7 +28,7 @@ export default function Layout(props) {
               <li><Link to='/'>Home Page</Link></li>
               <li><Link to='/categories'>Pick a Quiz</Link></li>
               <li><Link to='/'>Leaderboard</Link></li>
-              <li><Link to='/questions'>Quiz Pool</Link></li>
+              <li><Link to='/questions'>Quiz Bank</Link></li>
               <li><Link to='/login'>Login</Link></li>
               <li><Link to='/register'>Register</Link></li>
             </ul>

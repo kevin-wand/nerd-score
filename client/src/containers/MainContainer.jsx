@@ -8,7 +8,7 @@ import { getAllPrompts, createPrompt, updatePrompt, deletePrompt } from '../serv
 import Categories from '../screens/Categories'
 import QuestionCreate from '../screens/QuestionCreate'
 import QuestionEdit from '../screens/QuestionEdit'
-import QuestionPool from '../screens/QuestionPool'
+import QuestionBank from '../screens/QuestionBank'
 import Quiz from '../screens/Quiz'
 import Home from '../screens/Home'
 
@@ -72,7 +72,7 @@ export default function MainContainer(props) {
         <Quiz />
       </Route>
       <Route path='/questions'>
-        <QuestionPool
+        <QuestionBank
           categoryList={categoryList}
           promptList={promptList}
           handleDelete={handleDelete}
