@@ -195,6 +195,10 @@ header {
   padding-left: 3px
 }
 
+.register-email {
+  padding-left: 24px
+}
+
 .login-button-container {
   flex-direction: row;
 }
@@ -206,7 +210,7 @@ header {
   background-color: black;
   color: white;
   border: none;
-  margin: 0px 10px;
+  margin: 0px 10px 10px 10px;
 }
 
 .login-button:active {
