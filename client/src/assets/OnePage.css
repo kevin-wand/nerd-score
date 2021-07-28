@@ -6,7 +6,6 @@ header {
   background-color: #4A5CA2; 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 /* ------------------------------------HEADER------------------------------------- */
@@ -27,8 +26,39 @@ header {
 }
 
 .user-welcome-container {
-  /* display: none; */
-  margin-right: 20rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.user-verification {
+  display: flex;
+  flex-direction: row;
+}
+.user-signed-in {
+  display: flex;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.user-logout {
+  display: flex;
+  font-size: 0.9rem;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-login {
+  display: flex;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger {
@@ -51,29 +81,43 @@ header {
   justify-items: center;
 }
 
-  .welcome-tag { 
-    grid-area: main-option-container;
-    grid-row: 1/2;
-    grid-column: 1/4;
-  }
+.welcome-tag { 
+  grid-area: main-option-container;
+  grid-row: 1/2;
+  grid-column: 1/4;
+  font-size: 2rem;
+  color: #FFFFFF;
+  font-weight: bolder;
+}
 
-  .main-quiz { 
-    grid-area: main-option-container;
-    grid-row: 2/3;
-    grid-column: 1/2;
-  }
+.main-quiz { 
+  grid-area: main-option-container;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  font-size: 1.5rem;
+  
+}
 
-  .main-leader { 
-    grid-area: main-option-container;
-    grid-row: 2/3;
-    grid-column: 2/3 
-  }
+.main-leader { 
+  grid-area: main-option-container;
+  grid-row: 2/3;
+  grid-column: 2/3; 
+  font-size: 1.5rem;
+  
+}
 
-  .main-register { 
-    grid-area: main-option-container;
-    grid-row: 2/3;
-    grid-column: 3/4 
-  }
+.main-register { 
+  grid-area: main-option-container;
+  grid-row: 2/3;
+  grid-column: 3/4;
+  font-size: 1.5rem;
+}
+
+.main-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .welcome-tag, .main-option {
   text-align: center;
@@ -85,7 +129,11 @@ header {
   align-items: center;
   box-shadow: 0px 10px 13px -7px #000000, 5px 6px 9px 5px rgba(0,0,0,0);
   border-radius: 5px;
-} 
+}
+
+.main-option:hover {
+  transform: scale(1.1);
+}
 
 .welcome-tag {
   width: 92vw;

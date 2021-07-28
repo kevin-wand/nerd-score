@@ -14,12 +14,12 @@ export default function Layout(props) {
         <div className='dropdown-container'>
           <div className='user-welcome-container'>
             {currentUser ? (
-              <div>
-                <p>{currentUser.username}</p>
-                <button onClick={handleLogout}>Logout</button>
+              <div className='user-verification'>
+                <div className='user-signed-in'>Welcome {currentUser.username}!</div>
+                <button onClick={handleLogout} className='user-logout'>Logout</button>
               </div>
             ) : (
-              <Link to='/login'>Login</Link>
+              <Link to='/login' className='user-login'>Login</Link>
             )}
           </div>
           <div className='hamburger'>
