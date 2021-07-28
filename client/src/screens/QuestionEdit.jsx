@@ -42,59 +42,69 @@ export default function QuestionEdit(props) {
   };
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        handleUpdate(quizId, promptId, formData);
-      }}
-    >
-      <h3>Edit Question</h3>
-      <label>
-        Question:
-        <input
-          type='text'
-          name='question'
-          value={question}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Answer:
-        <input
-          type='text'
-          name='answer'
-          value={answer}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Choice 1:
-        <input
-          type='text'
-          name='choice1'
-          value={choice1}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Choice 2:
-        <input
-          type='text'
-          name='choice2'
-          value={choice2}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Choice 3:
-        <input
-          type='text'
-          name='choice3'
-          value={choice3}
-          onChange={handleChange}
-        />
-      </label>
-      <button>Edit</button>
-    </form>
+    <>
+      <h3 className='question-header'>Edit Question</h3>
+      <div className='question-wrapper'>
+        <form
+          className='question-form'
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleUpdate(quizId, promptId, formData);
+          }}
+        >
+          <label className='question-label'>
+            Question:
+            <input
+              className='question-input'
+              type='text'
+              name='question'
+              value={question}
+              onChange={handleChange}
+            />
+          </label>
+          <label className='question-label'>
+            Answer:
+            <input
+              className='question-input'
+              type='text'
+              name='answer'
+              value={answer}
+              onChange={handleChange}
+            />
+          </label>
+          <label className='question-label'>
+            Choice 1:
+            <input
+              className='question-input'
+              type='text'
+              name='choice1'
+              value={choice1}
+              onChange={handleChange}
+            />
+          </label>
+          <label className='question-label'>
+            Choice 2:
+            <input
+              className='question-input'
+              type='text'
+              name='choice2'
+              value={choice2}
+              onChange={handleChange}
+            />
+          </label>
+          <label className='question-label'>
+            Choice 3:
+            <input
+              className='question-input'
+              type='text'
+              name='choice3'
+              value={choice3}
+              onChange={handleChange}
+            />
+          </label>
+          <button className='question-button'>Edit</button>
+        </form>
+      </div>
+    </>
   );
 }
