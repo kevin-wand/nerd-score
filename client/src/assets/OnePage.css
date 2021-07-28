@@ -2,13 +2,38 @@
   background-color: #F1F4FA;
 }
 
+/* .wrapper:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 400;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.wrapper {
+  background-color: #F1F4FA;
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  z-index: 2;
+  transition: transform 0.5s ease-in-out;
+} */
+
+
+/* ------------------------------------HEADER------------------------------------- */
+
 header {
   background-color: #4A5CA2; 
   display: flex;
   flex-direction: row;
 }
-
-/* ------------------------------------HEADER------------------------------------- */
 
 .logo-container {
   width: 200px;
@@ -19,11 +44,11 @@ header {
   transform: translateY(-110px)
 }
 
-.dropdown-container {
+/* .dropdown-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
+} */
 
 .user-welcome-container {
   display: flex;
@@ -32,15 +57,15 @@ header {
 
 .user-verification {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+
 .user-signed-in {
   display: flex;
   color: #FFFFFF;
   font-size: 1.1rem;
   text-decoration: none;
-  justify-content: center;
-  align-items: center;
   padding-right: 1rem;
 }
 
@@ -50,6 +75,7 @@ header {
   text-decoration: none;
   justify-content: center;
   align-items: center;
+  height: 4vh
 }
 
 .user-login {
@@ -61,11 +87,33 @@ header {
   align-items: center;
 }
 
-.hamburger {
-  /* display: none; */
-  position: absolute;
-  right: 1rem;
-  z-index: 10;
+/* -------------------------------HAMBURGER MENU-------------------------------- */
+
+.navbar-false{
+  padding-top: 35px;
+  padding-left: 50vw
+} 
+
+.navbar-true{
+  padding-top: 35px;
+  padding-left: 42vw
+} 
+
+.hamburger-false{
+  display: none
+}
+
+.hamburger-true {
+  margin-left:90vw;
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  height: 100%;
+  width:100%;
+  z-index: 100;
+}
+
+li {
+  text-decoration: none;
 }
 
 /* ------------------------------------HOME------------------------------------- */
