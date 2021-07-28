@@ -26,7 +26,7 @@ export default function QuestionBank(props) {
   return (
     <div className='bank-wrapper'>
       <h3 className='bank-header'>Question Bank</h3>
-      <select onChange={handleChange} defaultValue='default'>
+      <select className='bank-select' onChange={handleChange} defaultValue='default'>
         <option disabled value='default' >
           -- Select a Category --
         </option>
@@ -34,16 +34,19 @@ export default function QuestionBank(props) {
           <option value={category.id} key={category.id}>{category.name}</option>
         ))}
       </select>
-      {dropdown ? <Link to={`/categories/${dropdown}/prompts`}><div>Add A Question</div></Link> : ""}
-      {promptList.prompts ?
-        (promptList.prompts.map((prompt) => (
-          <div key={prompt.id}>
-            <div>{prompt.question}</div>
-            <Link to={`/categories/${dropdown}/prompts/${prompt.id}/edit`}><button>Edit</button></Link>
-            <button onClick={() => handleDelete(dropdown, prompt.id)}>Delete</button>
-          </div>
-        ))) : ("")}
-      <div></div>
+      <div className='bank-list'>
+        {dropdown ? <Link to={`/categories/${dropdown}/prompts`} className='bank-add'><div>Add Question to Bank</div></Link> : ""}
+        {promptList.prompts ?
+          (promptList.prompts.map((prompt) => (
+            <div key={prompt.id} className='bank-prompts'>
+              <div>{prompt.question}</div>
+              <div className='bank-button-container'>
+                <Link to={`/categories/${dropdown}/prompts/${prompt.id}/edit`} ><button className='bank-buttons'>Edit</button></Link>
+                <button onClick={() => handleDelete(dropdown, prompt.id)} className='bank-buttons'>Delete</button>
+              </div>
+            </div>
+          ))) : ("")}
+      </div>
     </div>
   );
 }
