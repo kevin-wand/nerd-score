@@ -51,12 +51,3 @@ class PromptsController < ApplicationController
       params.require(:prompt).permit(:question, :answer, :choice1, :choice2, :choice3, :user_id, :category_id)
     end
 end
-
-=begin
-
-If a quiz is 10 questions, 3 ideas for setting up the prompts:
-1. make 1 axios request, pull 10 questions to FE, randomize/sample from there
-2. make 1 request, pull 10 questions on BE, randomize/sample then send to FE
-3. pull 1 question at a time, (i think this is how david suggested to run the project)
-
-=end

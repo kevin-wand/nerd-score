@@ -34,8 +34,8 @@ puts "#{Category.count} category(ies) created"
   question: "What is the Voldemort's original name? (first name)", 
   answer: "Tom", 
   choice1: "Tim", 
-  choice2: "Timothy", 
-  choice3: "Thomas",
+  choice2: "Talon", 
+  choice3: "Harry",
   user: @admin,
   category: @hp)
 @hp3 = Prompt.create!(
@@ -47,7 +47,7 @@ puts "#{Category.count} category(ies) created"
   user: @admin,
   category: @hp)
 @marvel1 = Prompt.create!(
-  question: "Whos is the god of Mischief?",
+  question: "Who is the god of Mischief?",
   answer: "Loki",
   choice1: "Thor", 
   choice2: "Asmodan", 

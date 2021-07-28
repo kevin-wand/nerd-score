@@ -18,7 +18,6 @@ export default function Quiz() {
   useEffect(() => {
     const fetchOneCategory = async () => {
       const data = await getOneCategory(quizId);
-      console.log(data)
       setCurrentGame({
         name: data.name,
         questions: shuffle(data.prompts.slice(-gameLength))
